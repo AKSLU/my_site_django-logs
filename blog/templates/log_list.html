@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Логи посещений</title>
+</head>
+<body>
+    <h1>Логи посещений сайта</h1>
+    <table border="1">
+        <tr>
+            <th>Время</th>
+            <th>IP адрес</th>
+            <th>User ID</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.timestamp }}</td>
+            <td>{{ log.ip_address }}</td>
+            <td>{{ log.user_id|default:"-" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
